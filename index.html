@@ -7,6 +7,23 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
+    <!-- This form allows users to select the starting player (either Player X or Player O) 
+    before beginning the game. Once the "Start Game" button is clicked, the selected player 
+    will be set as the current player. -->
+
+    <!-- For future commit: This form should only be visible at the start of the game 
+    and hidden using JS after selection in order to avoid resetting the game during player switches. -->
+    <form id="playerForm">
+        <label for="currentPlayer">Current Player:</label>
+        <select id="currentPlayer">
+          <option value="X">Player X</option>
+          <option value="O">Player O</option>
+        </select>
+        <button type="submit">Start Game</button>
+      </form>
+      
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>
