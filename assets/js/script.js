@@ -23,6 +23,14 @@ function markTile(tile) {
       return;
     }
 
+// Logic to check if the tile is already marked
+if (tile.textContent === '') {
+    tile.textContent = currentPlayer; // Set the tile to the current player's mark
+    // Switch players
+    currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
+  }
+}
+
 function handlePlayAgainClick() {
     // Clear local storage
     localStorage.clear();
