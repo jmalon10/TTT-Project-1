@@ -17,33 +17,41 @@ function handlePlayAgainClick() {
 playAgainButton.addEventListener('click', handlePlayAgainClick);
 //-------------------------------------------------------------------------------------------
 // Store X's and O's positions-------------------------------------------------------------------------------------------
-const twoDarray = [
-    [``, ``, ``],
-    [``, ``, ``],
-    [``, ``, ``],
-  ];
-  
-  const cells = document.querySelectorAll('.tile'); // Use a class selector if tiles have a class 'tile'
+const defaultTwoDarray = [
+  [``, ``, ``],
+  [``, ``, ``],
+  [``, ``, ``],
+];
 
-  // Iterate over each cell and add the event listener
+let twoDarray = JSON.parse(localStorage.getItem('storedData')) || defaultTwoDarray;
+
+// Function to initialize the board with the stored or default data
+function initializeBoard() {
   cells.forEach(cell => {
-      cell.addEventListener("click", function(event) {
-          const cellClicked = event.target;
-          const row = cellClicked.dataset.row;
-          const col = cellClicked.dataset.col;
-          const twoDarray = JSON.parse(localStorage.getItem('storedData')) || []; // takes the existing array from local storage
-          const playerCharacter = cellClicked.textContent;
-          console.log(playerCharacter);
-          if (!twoDarray[row][col]) { // "If there's no x or o in the existing tile...."
-              //MUST DEFINE PLAYER CHARACTER ONCE WE GET DISPLAY
-              twoDarray[row][col] = playerCharacter; // enters the text content/x or o to the array
-          }
-          updateLocalStorage();
-          //else {
-          //   // ADD CODE HERE TO DISPLAY ERROR MESSAGE
-          // }
-      });
+      const row = parseInt(cell.dataset.row, 10);
+      const col = parseInt(cell.dataset.col, 10);
+      cell.textContent = twoDarray[row][col];
   });
+}
+
+// Add event listeners to each cell
+const cells = document.querySelectorAll('.tile');
+cells.forEach(cell => {
+  cell.addEventListener("click", function(event) {
+      const cellClicked = event.target;
+      const row = parseInt(cellClicked.dataset.row, 10);
+      const col = parseInt(cellClicked.dataset.col, 10);
+      
+      if (!cellClicked.textContent && twoDarray[row][col] === '') { // Check if cell is empty
+          const playerCharacter = currentPlayer; // Assume currentPlayer is defined elsewhere
+          cellClicked.textContent = playerCharacter;
+          twoDarray[row][col] = playerCharacter; // Update the global twoDarray
+          updateLocalStorage();
+          currentPlayer = (currentPlayer === 'X') ? 'O' : 'X'; // Switch player
+      }
+  });
+});
+
 // update local storage -----------------------------------------------------------------------------------------------------
   function updateLocalStorage() {
     localStorage.setItem('storedData', JSON.stringify(twoDarray));
