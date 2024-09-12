@@ -23,13 +23,24 @@ function markTile(tile) {
       return;
     }
 
-// Logic to check if the tile is already marked
+// logic to check if the tile is already marked
 if (tile.textContent === '') {
     tile.textContent = currentPlayer; // Set the tile to the current player's mark
     // Switch players
     currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
   }
 }
+
+// event listeners for dropdown player selection
+document.getElementById('player-x').addEventListener('click', function() {
+    currentPlayer = 'X';
+    hideDropdown(); // Hide the dropdown menu after selection
+  });
+  
+  document.getElementById('player-o').addEventListener('click', function() {
+    currentPlayer = 'O';
+    hideDropdown(); // Hide the dropdown menu after selection
+  });
 
 function handlePlayAgainClick() {
     // Clear local storage
