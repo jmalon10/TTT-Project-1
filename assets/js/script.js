@@ -22,19 +22,14 @@ const twoDarray = [
     [``, ``, ``],
   ];
   
-  const row = 0;
-  const col = 2;
-  
-  console.log("cell value", twoDarray[row][col]);
-  
   cell.addEventListener("click", function(event) {
     const cellClicked = event.target;
   
     const row = cellClicked.dataset.row;
     const col = cellClicked.dataset.col;
   
-    if (!twoDarray[row][col]) {
-      twoDarray[row][col] = playerCharacter;
+    if (!twoDarray[row][col]) { //MUST DEFINE PLAYER CHARACTER ONCE WE GET DISPLAY
+      twoDarray[row][col] = playerCharacter; // enters the text content/x or o to the array
     }
   })
 
