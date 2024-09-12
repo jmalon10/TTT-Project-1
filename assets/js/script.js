@@ -5,7 +5,6 @@ let currentPlayer = null; // No player is initially selected
 // FUNCTIONS -------------------------------------------------------------------------------
 
 // function to hide dropdown menu once player selects choice between Player X and Player O
-
 function hideDropdown() {
     const dropdownMenu = document.querySelector('.dropdown-menu.show');
     if (dropdownMenu) {
@@ -15,6 +14,14 @@ function hideDropdown() {
       }
     }
   }
+
+// function to mark a tile
+function markTile(tile) {
+    // Ensure that a player is selected before marking a tile or alert is given to select one
+    if (currentPlayer === null) {
+      alert('Please select a player to start the game!');
+      return;
+    }
 
 function handlePlayAgainClick() {
     // Clear local storage
