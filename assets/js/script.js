@@ -33,4 +33,6 @@ const twoDarray = [
     }
   })
 
-
+  function updateLocalStorage() {
+    localStorage.setItem('storedData', JSON.stringify(twoDarray));
+  }
