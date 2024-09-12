@@ -23,6 +23,10 @@ function handlePlayAgainClick() {
     // Refresh the page
     window.location.reload();
 }
+
+function updateLocalStorage() {
+  localStorage.setItem('storedData', JSON.stringify(twoDarray));
+};  
 // USER INTERACTIONS -----------------------------------------------------------------------
 
 playAgainButton.addEventListener('click', handlePlayAgainClick);
