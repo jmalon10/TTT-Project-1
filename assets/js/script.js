@@ -24,15 +24,19 @@ const twoDarray = [
   
   cell.addEventListener("click", function(event) {
     const cellClicked = event.target;
-  
     const row = cellClicked.dataset.row;
     const col = cellClicked.dataset.col;
-  
-    if (!twoDarray[row][col]) { //MUST DEFINE PLAYER CHARACTER ONCE WE GET DISPLAY
+    const twoDarray = JSON.parse(localStorage.getItem('storedData')) || []; // takes the existing array from local storage
+    
+    if (!twoDarray[row][col]) { // "If theres no x or o in the existing tile...."
+      //MUST DEFINE PLAYER CHARACTER ONCE WE GET DISPLAY
       twoDarray[row][col] = playerCharacter; // enters the text content/x or o to the array
+      updateLocalStorage();
+    } else {
+        // ADD CODE HERE TO DISPLAY ERROR MESSAGE
     }
   })
-
+// update local storage -----------------------------------------------------------------------------------------------------
   function updateLocalStorage() {
     localStorage.setItem('storedData', JSON.stringify(twoDarray));
   }
