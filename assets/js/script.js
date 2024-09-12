@@ -65,6 +65,23 @@ function initializeBoard() {
   });
 }
 
+function markTile(tile) {
+  if (currentPlayer === null) {
+    alert('Please select a player first.');
+    return;
+  }
+
+  const row = parseInt(tile.dataset.row, 10);
+  const col = parseInt(tile.dataset.column, 10);
+
+  if (!tile.textContent && twoDarray[row][col] === '') {
+    tile.textContent = currentPlayer;
+    twoDarray[row][col] = currentPlayer;
+    updateLocalStorage();
+    currentPlayer = (currentPlayer === 'X') ? 'O' : 'X'; // Switch player
+  }
+}
+
 // Add event listeners to each cell
 function setupCellEventListeners() {
   const cells = document.querySelectorAll('.tile');
@@ -73,7 +90,7 @@ function setupCellEventListeners() {
       const cellClicked = event.target;
       const row = parseInt(cellClicked.dataset.row, 10);
       const col = parseInt(cellClicked.dataset.column, 10);
-      
+
       if (!cellClicked.textContent && twoDarray[row][col] === '') { // Check if cell is empty
         const playerCharacter = currentPlayer; 
         cellClicked.textContent = playerCharacter;
