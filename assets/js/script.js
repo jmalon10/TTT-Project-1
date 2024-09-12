@@ -1,11 +1,10 @@
 // DEPENDENCIES-----------------------------------------------------------------------------
 // DATA / STATE ----------------------------------------------------------------------------
+let currentPlayer = null; // No player is initially selected
 // FUNCTIONS -------------------------------------------------------------------------------
 // USER INTERACTIONS -----------------------------------------------------------------------
 // INITIALIZATIONS --------------------------------------------------------------------------
 
-// Pay again button functionality -----------------------------------------------------------
-const playAgainButton = document.getElementById('play-again-btn');
 function handlePlayAgainClick() {
     // Clear local storage
     localStorage.clear();
