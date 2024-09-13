@@ -81,8 +81,10 @@ function markTile(tile) {
     if (currentPlayer !== null) {
       currentPlayer = (currentPlayer === 'X') ? 'O' : 'X'; // Switch player
   }
+  setTimeout(() => {
+    checkWin();
+  }, 0);
   }
-  checkWin();
 }
   // pull array from local storage -- twoDarray is a global varibale that already pulls the data from local storage
   // if in the existing array...
