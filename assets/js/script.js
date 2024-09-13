@@ -120,6 +120,7 @@ function isAntiDiagonalWin(){
 function checkWin() { // function to decide if we have a win
   if (isHorizontalWin() || isVerticalWin() || isDiagonalWin() || isAntiDiagonalWin()) {
    // winModal(); // CALL JILANIS CODE HERE TO DISPLAY WIN MODAL
+   alert('you win!');
   }
 };
 
