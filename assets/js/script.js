@@ -108,13 +108,18 @@ function isVerticalWin(){
   }
 }
 function isDiagonalWin(){
-if (allEqual([twoDarray[0][0], twoDarray[1][1], twoDarray[2][2]])) {
+  if (allEqual([twoDarray[0][0], twoDarray[1][1], twoDarray[2][2]])) {
   return true;
+    }
   }
-}
+function isAntiDiagonalWin(){
+  if (allEqual([twoDarray[0][2], twoDarray[1][1], twoDarray[2][0]])) {
+    return true;
+    }
+  }
 function checkWin() { // function to decide if we have a win
   if (isHorizontalWin() || isVerticalWin() || isDiagonalWin() || isAntiDiagonalWin()) {
-    winModal();
+   // winModal(); // CALL JILANIS CODE HERE TO DISPLAY WIN MODAL
   }
 };
 
