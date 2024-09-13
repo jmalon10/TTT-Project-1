@@ -78,6 +78,7 @@ function markTile(tile) {
     tile.textContent = currentPlayer;
     twoDarray[row][col] = currentPlayer;
     updateLocalStorage();
+    checkWin();
     if (currentPlayer !== null) {
       currentPlayer = (currentPlayer === 'X') ? 'O' : 'X'; // Switch player
   }
