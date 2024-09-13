@@ -140,7 +140,6 @@ playAgainButton.addEventListener('click', handlePlayAgainClick);
 // Initialize board and setup cell event listeners
 document.addEventListener('DOMContentLoaded', () => {
   initializeBoard();
-  setupCellEventListeners();
 });
 
 
