@@ -94,6 +94,14 @@ function markTile(tile) {
 function allEqual(arr) {
         return arr.every(val => val === arr[0] && val !== '');
     }
+
+function isVerticalWin(){
+  for (let column = 0; column < 3; column++) {
+    if (allEqual(twoDarray[column])) {
+        return true;
+    }
+  }
+}
 function isHorizontalWin(){
   for (let row = 0; row < 3; row++) {
     if (allEqual(twoDarray[row])) {
