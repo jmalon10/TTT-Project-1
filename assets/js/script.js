@@ -99,6 +99,13 @@ function isHorizontalWin(){
     }
   }
 }
+function isVerticalWin(){
+  for (let column = 0; column < 3; column++) {
+    if (allEqual(twoDarray[column])) {
+        return true;
+    }
+  }
+}
 function checkWin() { // function to decide if we have a win
   if (isHorizontalWin() || isVerticalWin() || isDiagonalWin() || isAntiDiagonalWin()) {
     winModal();
