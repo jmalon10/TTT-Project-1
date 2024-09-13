@@ -13,7 +13,8 @@ const defaultTwoDarray = [
 let twoDarray = JSON.parse(localStorage.getItem('storedData')) || defaultTwoDarray;
 
 // FUNCTIONS -------------------------------------------------------------------------------
-<button id="theme-toggle">Switch to Dark Mode</button>
+<button id="theme-toggle">Switch to dark mode</button>
+
 
 // JavaScript to handle Light/Dark Mode Toggle
 const themeToggleButton = document.getElementById('theme-toggle');
