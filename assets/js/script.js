@@ -13,12 +13,16 @@ const defaultTwoDarray = [
 let twoDarray = JSON.parse(localStorage.getItem('storedData')) || defaultTwoDarray;
 
 // FUNCTIONS -------------------------------------------------------------------------------
-<button id="theme-toggle">Switch to dark mode</button>
+
 
 
 // JavaScript to handle Light/Dark Mode Toggle
-const themeToggleButton = document.getElementById('theme-toggle');
+const themeToggle = document.getElementById("theme-toggle");
 
+themeToggle.addEventListener("click", function() {
+    // Your theme toggle logic here
+    console.log("Theme toggle clicked");
+});
 // Function to switch themes
 function switchTheme() {
   const isDarkMode = document.body.classList.toggle('dark-mode');
