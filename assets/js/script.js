@@ -102,6 +102,11 @@ function isVerticalWin(){
     }
   }
 }
+function isDiagonalWin(){
+  if (allEqual([twoDarray[0][0], twoDarray[1][1], twoDarray[2][2]])) {
+  return true;
+    }
+  }
 function isHorizontalWin(){
   for (let row = 0; row < 3; row++) {
     if (allEqual(twoDarray[row])) {
