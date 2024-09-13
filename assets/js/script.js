@@ -91,7 +91,12 @@ function markTile(tile) {
     // diagonal ([0,0][1,1] [2,2])--- diagonal win
     // anti diagonal ([0,2] [1,1] [2,0])-- antidiagonal win 
     // call function when the new data saved in array
-
+function checkWin() { // function to decide if we have a win
+  if (isHorizontalWin() || isVerticalWin() || isDiagonalWin() || isAntiDiagonalWin()) {
+   // winModal(); // CALL JILANIS CODE HERE TO DISPLAY WIN MODAL
+   alert('you win!');
+  }
+};
 // INITIALIZATIONS --------------------------------------------------------------------------
 
 // Add event listeners to dropdown items
