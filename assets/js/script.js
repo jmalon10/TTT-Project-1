@@ -89,6 +89,13 @@ function markTile(tile) {
     // columns 0-2 all the same value-- vertical win
     // diagonal ([0,0][1,1] [2,2])--- diagonal win
     // anti diagonal ([0,2] [1,1] [2,0])-- antidiagonal win 
+function isHorizontalWin(){
+  for (let row = 0; row < 3; row++) {
+    if (allEqual(twoDarray[row])) {
+        return true;
+    }
+  }
+}
 function checkWin() { // function to decide if we have a win
   if (isHorizontalWin() || isVerticalWin() || isDiagonalWin() || isAntiDiagonalWin()) {
     winModal();
