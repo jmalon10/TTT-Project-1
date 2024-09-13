@@ -78,11 +78,11 @@ function markTile(tile) {
     tile.textContent = currentPlayer;
     twoDarray[row][col] = currentPlayer;
     updateLocalStorage();
-    checkWin();
     if (currentPlayer !== null) {
       currentPlayer = (currentPlayer === 'X') ? 'O' : 'X'; // Switch player
   }
   }
+  checkWin();
 }
   // pull array from local storage -- twoDarray is a global varibale that already pulls the data from local storage
   // if in the existing array...
