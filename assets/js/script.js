@@ -89,6 +89,7 @@ function markTile(tile) {
     // columns 0-2 all the same value-- vertical win
     // diagonal ([0,0][1,1] [2,2])--- diagonal win
     // anti diagonal ([0,2] [1,1] [2,0])-- antidiagonal win 
+    // call function when the new data saved in array
 function allEqual(arr) {
         return arr.every(val => val === arr[0] && val !== '');
     }
@@ -104,6 +105,11 @@ function isVerticalWin(){
     if (allEqual(twoDarray[column])) {
         return true;
     }
+  }
+}
+function isDiagonalWin(){
+if (allEqual([twoDarray[0][0], twoDarray[1][1], twoDarray[2][2]])) {
+  return true;
   }
 }
 function checkWin() { // function to decide if we have a win
