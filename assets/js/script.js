@@ -13,6 +13,54 @@ const defaultTwoDarray = [
 let twoDarray = JSON.parse(localStorage.getItem('storedData')) || defaultTwoDarray;
 
 // FUNCTIONS -------------------------------------------------------------------------------
+<button id="theme-toggle">Switch to Dark Mode</button>
+
+// JavaScript to handle Light/Dark Mode Toggle
+const themeToggleButton = document.getElementById('theme-toggle');
+
+// Function to switch themes
+function switchTheme() {
+  const isDarkMode = document.body.classList.toggle('dark-mode');
+  
+  // Update the button text based on the current theme
+  themeToggleButton.textContent = isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+  
+  // Save the user preference to localStorage
+  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+}
+
+// Check the saved theme in localStorage when the page loads
+function initializeTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  
+  // If a saved theme exists, apply it
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    themeToggleButton.textContent = 'Switch to Light Mode';
+  } else {
+    document.body.classList.add('light-mode');
+    themeToggleButton.textContent = 'Switch to Dark Mode';
+  }
+}
+
+// Add event listener to the theme toggle button
+themeToggleButton.addEventListener('click', switchTheme);
+
+// Initialize theme on page load
+document.addEventListener('DOMContentLoaded', initializeTheme);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Function to handle player selection
 function setPlayer(event) {

@@ -39,7 +39,40 @@
         <button type="button" class="btn btn-primary">Save</button>
         <button type="button" class="btn btn-success" id='play-again-btn'>Play Again!</button>
     </footer>
+    <button id="theme-toggle">Switch to Dark Mode</button>
     <script src="assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+<style>
+    /* Light Theme */
+    body.light-mode {
+      background: linear-gradient(to bottom, rgb(250, 145, 145), rgb(159, 159, 231)); 
+      color: rgb(255, 255, 255);
+    }
+
+    /* Dark Theme */
+    body.dark-mode {
+      background: linear-gradient(to bottom, rgb(108, 18, 18), rgb(18, 18, 91));
+      color: white;
+    }
+
+    /* Styling for the Toggle Button */
+    #theme-toggle {
+      padding: 10px 20px;
+      cursor: pointer;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <button id="theme-toggle">Switch to Dark Mode</button>
+<script>
+
+
+
+
+
+
