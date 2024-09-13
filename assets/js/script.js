@@ -83,7 +83,14 @@ function markTile(tile) {
   }
   }
 }
-
+// FUNTION FOR CHECKING WINS
+// pull array from local storage -- twoDarray is a global varibale that already pulls the data from local storage
+  // if in the existing array...
+    // rows 0-2 all the same value-- horizontal win
+    // columns 0-2 all the same value-- vertical win
+    // diagonal ([0,0][1,1] [2,2])--- diagonal win
+    // anti diagonal ([0,2] [1,1] [2,0])-- antidiagonal win 
+    // call function when the new data saved in array
 
 // INITIALIZATIONS --------------------------------------------------------------------------
 
