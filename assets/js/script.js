@@ -84,30 +84,6 @@ function markTile(tile) {
   }
 }
 
-// Add event listeners to each cell
-// function setupCellEventListeners() {
-//   const cells = document.querySelectorAll('.tile');
-//   cells.forEach(cell => {
-//     cell.addEventListener("click", function(event) {
-//       const cellClicked = event.target;
-//       const row = parseInt(cellClicked.dataset.row, 10);
-//       const col = parseInt(cellClicked.dataset.column, 10);
-
-//       if (!cellClicked.textContent && twoDarray[row][col] === '') { // Check if cell is empty
-//         const playerCharacter = currentPlayer; 
-//         cellClicked.textContent = playerCharacter;
-//         twoDarray[row][col] = playerCharacter; 
-//         updateLocalStorage();
-    
-//         // Switch player only if currentPlayer is not null
-//         if (currentPlayer !== null) {
-//             currentPlayer = (currentPlayer === 'X') ? 'O' : 'X'; // Switch player
-//         }
-//     }  
-//     });
-//   });
-// }
-
 // INITIALIZATIONS --------------------------------------------------------------------------
 
 // Add event listeners to dropdown items
