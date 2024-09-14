@@ -32,11 +32,10 @@ function setPlayer(event) {
 }
 
 // Function to hide dropdown menu
-
 function hideDropdown() {
-  const dropdown = document.querySelector('.dropdown'); // Select the entire dropdown div
+  const dropdown = document.querySelector('.dropdown');
   if (dropdown) {
-    dropdown.style.display = 'none'; // Hide the entire dropdown container
+    dropdown.style.display = 'none';
   }
 }
 
