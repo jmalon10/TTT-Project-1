@@ -93,7 +93,8 @@ function allEqual(arr) {
 
 function isVerticalWin(){
   for (let column = 0; column < 3; column++) {
-    if (allEqual(twoDarray[column])) {
+    const columnValues = [twoDarray[0][column], twoDarray[1][column], twoDarray[2][column]];
+    if (allEqual(columnValues)) {
         return true;
     }
   }
