@@ -77,10 +77,48 @@ function markTile(tile) {
     updateLocalStorage();
     if (currentPlayer !== null) {
       currentPlayer = (currentPlayer === 'X') ? 'O' : 'X'; // Switch player
-  }
+    }
+    setTimeout(() => {
+      checkWin();
+    }, 0);
   }
 }
 
+function allEqual(arr) {
+        return arr.every(val => val === arr[0] && val !== '');
+    }
+
+function isVerticalWin(){
+  for (let column = 0; column < 3; column++) {
+    const columnValues = [twoDarray[0][column], twoDarray[1][column], twoDarray[2][column]];
+    if (allEqual(columnValues)) {
+        return true;
+    }
+  }
+}
+function isDiagonalWin(){
+  if (allEqual([twoDarray[0][0], twoDarray[1][1], twoDarray[2][2]])) {
+  return true;
+    }
+  }
+  function isAntiDiagonalWin(){
+    if (allEqual([twoDarray[0][2], twoDarray[1][1], twoDarray[2][0]])) {
+      return true;
+      }
+    }
+function isHorizontalWin(){
+  for (let row = 0; row < 3; row++) {
+    if (allEqual(twoDarray[row])) {
+        return true;
+    }
+  }
+}
+function checkWin() { // function to decide if we have a win
+  if (isHorizontalWin() || isVerticalWin() || isDiagonalWin() || isAntiDiagonalWin()) {
+   // winModal(); // CALL JILANIS CODE HERE TO DISPLAY WIN MODAL
+   alert('you win!');
+  }
+};
 // INITIALIZATIONS --------------------------------------------------------------------------
 
 // Add event listeners to dropdown items
@@ -94,7 +132,6 @@ playAgainButton.addEventListener('click', handlePlayAgainClick);
 // Initialize board and setup cell event listeners
 document.addEventListener('DOMContentLoaded', () => {
   initializeBoard();
-  setupCellEventListeners();
 });
 
 
