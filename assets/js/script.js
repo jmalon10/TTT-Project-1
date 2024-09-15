@@ -13,9 +13,8 @@ const defaultTwoDarray = [
 let twoDarray = JSON.parse(localStorage.getItem('storedData')) || defaultTwoDarray;
 
 //------------------------------FUNCTIONS -------------------------------------------------------------------------------
-// Light/Dark Theme Functions --------------------------------------------------------------
-function switchTheme(event) {
-  if (event.target.checked) {
+function switchTheme(theme) {
+  if (theme === 'dark') {
     document.body.classList.remove('light-mode');
     document.body.classList.add('dark-mode');
     localStorage.setItem('theme', 'dark');
@@ -25,6 +24,20 @@ function switchTheme(event) {
     localStorage.setItem('theme', 'light');
   }
 }
+
+
+// Light/Dark Theme Functions --------------------------------------------------------------
+// function switchTheme(event) {
+//   if (event.target.checked) {
+//     document.body.classList.remove('light-mode');
+//     document.body.classList.add('dark-mode');
+//     localStorage.setItem('theme', 'dark');
+//   } else {
+//     document.body.classList.remove('dark-mode');
+//     document.body.classList.add('light-mode');
+//     localStorage.setItem('theme', 'light');
+//   }
+// }
 
 function applySavedTheme() {
   const savedTheme = localStorage.getItem('theme') || 'light'; // default to light mode
@@ -104,7 +117,7 @@ function markTile(tile) {
     if (currentPlayer !== null) {
     currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
   }
-  applySavedTheme();
+  switchTheme(currentPlayer === 'X' ? 'light' : 'dark');
     setTimeout(() => {
       checkWin();
     }, 0);
