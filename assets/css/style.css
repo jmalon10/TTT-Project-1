@@ -62,8 +62,9 @@
   
   /* Light Mode Styles */
   body.light-mode {
-    background-color: white;
-    color: black;
+    background: linear-gradient(to bottom, rgb(250, 145, 145), rgb(159, 159, 231));
+    color: rgb(255, 255, 255);
+    
   }
   /* Dark Mode Styles */
 body.dark-mode {
