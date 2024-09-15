@@ -18,6 +18,7 @@ MIT License
 - JAVASCRIPT
 - BOOTSTRAP
 - FIGMA
+- GOOGLE FONTS
 
 ## Acknowledgements
 - Bootstrap for the CSS framework.
