@@ -1,5 +1,11 @@
 /* style file */
 
+.dropdown {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
 .game-board {
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
