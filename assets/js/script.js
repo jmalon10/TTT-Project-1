@@ -53,12 +53,9 @@ function setPlayer(event) {
 }
 
 function hideDropdown() {
-  const dropdownMenu = document.querySelector('.dropdown-menu.show');
-  if (dropdownMenu) {
-    const dropdown = bootstrap.Dropdown.getInstance(document.getElementById('player-selector'));
-    if (dropdown) {
-      dropdown.hide();
-    }
+  const dropdown = document.querySelector('.dropdown');
+  if (dropdown) {
+    dropdown.style.display = 'none';
   }
 }
 
@@ -82,7 +79,8 @@ function initializeBoard() {
 
 function markTile(tile) {
   if (currentPlayer === null) {
-    alert('Please select a player first.');
+    const playerSelectionModal = new bootstrap.Modal(document.getElementById('playerSelectionModal'));
+    playerSelectionModal.show(); // Show the modal
     return;
   }
 
@@ -135,6 +133,7 @@ function isHorizontalWin(){
 
 function checkWin() {
   if (isHorizontalWin() || isVerticalWin() || isDiagonalWin() || isAntiDiagonalWin()) {
+   // winModal(); // CALL JILANIS CODE HERE TO DISPLAY WIN MODAL
    alert('you win!');
   }
 }
