@@ -6,8 +6,8 @@
     width: 500px;
     height: 500px;
     margin: 0 auto;
-    background-color: lemonchiffon;
-    border: 5px solid #bada55;
+    background: linear-gradient(to bottom, rgb(160, 50, 50), rgb(32, 32, 144));
+    border: 5px solid #000000;
     border-radius: 10px;
 }
 
@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 5px solid #bada55;
+    border: 5px solid #000000;
     border-radius: 2px;
 }
 /* Toggle Switch CSS */
