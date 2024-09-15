@@ -1,5 +1,18 @@
 /* style file */
 
+/* google font class for UI */
+.freckle-face-regular {
+    font-family: "Freckle Face", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  } 
+  
+* {
+    font-family: "Freckle Face", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .game-board {
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
