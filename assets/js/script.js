@@ -104,8 +104,7 @@ function markTile(tile) {
     if (currentPlayer !== null) {
     currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
   }
-    // Switch player//
-  
+  applySavedTheme();
     setTimeout(() => {
       checkWin();
     }, 0);
