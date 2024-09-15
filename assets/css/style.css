@@ -18,3 +18,55 @@
     border: 5px solid #bada55;
     border-radius: 2px;
 }
+/* Toggle Switch CSS */
+.theme-switch {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+  }
+  
+  .theme-switch input {
+    display: none;
+  }
+  
+  .slider {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  
+  .slider:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    transition: 0.3s;
+  }
+  
+  input:checked + .slider {
+    background-color: #4caf50;
+  }
+  
+  input:checked + .slider:before {
+    transform: translate(25px, -50%);
+  }
+  
+  /* Light Mode Styles */
+  body.light-mode {
+    background-color: white;
+    color: black;
+  }
+  /* Dark Mode Styles */
+body.dark-mode {
+    background-color: black;
+    color: white;
+  }
