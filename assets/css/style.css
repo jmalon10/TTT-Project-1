@@ -68,6 +68,6 @@
   }
   /* Dark Mode Styles */
 body.dark-mode {
-    background-color: black;
+  background: linear-gradient(to bottom, rgb(111, 27, 27), rgb(19, 19, 89));
     color: white;
   }
