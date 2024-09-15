@@ -1,5 +1,8 @@
 /* style file */
-
+.dropdown {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
 /* google font class for UI */
 .freckle-face-regular {
     font-family: "Freckle Face", system-ui;
