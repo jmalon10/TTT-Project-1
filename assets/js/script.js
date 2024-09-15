@@ -12,6 +12,7 @@ const defaultTwoDarray = [
 
 let twoDarray = JSON.parse(localStorage.getItem('storedData')) || defaultTwoDarray;
 
+//------------------------------FUNCTIONS -------------------------------------------------------------------------------
 // Light/Dark Theme Functions --------------------------------------------------------------
 function switchTheme(event) {
   if (event.target.checked) {
@@ -38,20 +39,24 @@ function applySavedTheme() {
   }
 }
 
-// FUNCTIONS -------------------------------------------------------------------------------
+
 // Function to handle player selection
 function setPlayer(event) {
   event.preventDefault(); 
   const selectedPlayer = event.target.id;
 
+
+// Update the currentPlayer based on user input//
   if (selectedPlayer === 'player-x') {
     currentPlayer = 'X';
   } else if (selectedPlayer === 'player-o') {
     currentPlayer = 'O';
   }
+ 
+    // Hide the dropdown menu after selection//
   hideDropdown();
 }
-
+// Function to hide dropdown menu//
 function hideDropdown() {
   const dropdown = document.querySelector('.dropdown');
   if (dropdown) {
@@ -61,13 +66,18 @@ function hideDropdown() {
 
 function handlePlayAgainClick() {
   localStorage.clear();
+
+
+  // Refresh the page//
   window.location.reload();
 }
 
+// updates localStorage with the new state of the board//
 function updateLocalStorage() {
   localStorage.setItem('storedData', JSON.stringify(twoDarray));
 }
 
+// initialize the board with the stored data or empty array//
 function initializeBoard() {
   const cells = document.querySelectorAll('.tile');
   cells.forEach(cell => {
@@ -92,6 +102,9 @@ function markTile(tile) {
     twoDarray[row][col] = currentPlayer;
     updateLocalStorage();
     currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
+    
+    // Switch player//
+  
     setTimeout(() => {
       checkWin();
     }, 0);
@@ -131,7 +144,7 @@ function isHorizontalWin(){
   }
 }
 
-function checkWin() {
+function checkWin() { // function to decide if we have a win//
   if (isHorizontalWin() || isVerticalWin() || isDiagonalWin() || isAntiDiagonalWin()) {
    // winModal(); // CALL JILANIS CODE HERE TO DISPLAY WIN MODAL
    alert('you win!');
@@ -140,18 +153,20 @@ function checkWin() {
 
 // INITIALIZATIONS --------------------------------------------------------------------------
 
-// Apply saved theme on page load and initialize board
+//Apply saved theme on page load and initialize board//
 document.addEventListener('DOMContentLoaded', () => {
   applySavedTheme();
   initializeBoard();
 });
 
-// Add event listeners to dropdown items and Play Again button
+// Add event listeners to dropdown items//
 document.querySelectorAll('.dropdown-item').forEach(item => {
   item.addEventListener('click', setPlayer);
 });
-playAgainButton.addEventListener('click', handlePlayAgainClick);
+// Add event listener to "Play Again" button//
+playAgainButton.addEventListener('click', 
+  handlePlayAgainClick);
 
-// Event listener for theme toggle switch
+// Event listener for theme toggle switch//
 document.getElementById('theme-toggle').addEventListener('change', switchTheme);
 
