@@ -116,8 +116,10 @@ function isHorizontalWin(){
 }
 function checkWin() { // function to decide if we have a win
   if (isHorizontalWin() || isVerticalWin() || isDiagonalWin() || isAntiDiagonalWin()) {
-   // winModal(); // CALL JILANIS CODE HERE TO DISPLAY WIN MODAL
-   alert('you win!');
+   // winModal(); // CALL JILANI'S CODE HERE TO DISPLAY WIN MODAL
+const winModal = new bootstrap.Modal(document.getElementById('winModal'));
+winModal.show();
+  //  alert('you win!');
   }
 };
 // INITIALIZATIONS --------------------------------------------------------------------------
