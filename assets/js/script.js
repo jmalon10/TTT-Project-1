@@ -64,10 +64,11 @@ function initializeBoard() {
 
 function markTile(tile) {
   if (currentPlayer === null) {
-    alert('Please select a player first.');
+    const playerSelectionModal = new bootstrap.Modal(document.getElementById('playerSelectionModal'));
+    playerSelectionModal.show(); // Show the modal
     return;
   }
-
+  
   const row = parseInt(tile.dataset.row, 10);
   const col = parseInt(tile.dataset.column, 10);
 
