@@ -33,12 +33,9 @@ function setPlayer(event) {
 
 // Function to hide dropdown menu
 function hideDropdown() {
-  const dropdownMenu = document.querySelector('.dropdown-menu.show');
-  if (dropdownMenu) {
-    const dropdown = bootstrap.Dropdown.getInstance(document.getElementById('player-selector'));
-    if (dropdown) {
-      dropdown.hide();
-    }
+  const dropdown = document.querySelector('.dropdown');
+  if (dropdown) {
+    dropdown.style.display = 'none';
   }
 }
 
