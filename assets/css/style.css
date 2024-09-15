@@ -68,7 +68,7 @@ body.light-mode {
 }
 
 body.light-mode .game-board {
-  background: linear-gradient(to bottom, #f0e68c, #f5deb3); /* Light mode board color */
+  background: linear-gradient(to bottom, #f68b8b, #95a3fe); /* Light mode board color */
   border: 5px solid #fff;
 }
 
