@@ -28,14 +28,11 @@ function switchTheme(theme) {
 
 function applySavedTheme() {
   const savedTheme = localStorage.getItem('theme') || 'light'; // default to light mode
-  const themeToggleCheckbox = document.getElementById('theme-toggle');
   
   if (savedTheme === 'dark') {
     document.body.classList.add('dark-mode');
-    themeToggleCheckbox.checked = true;
   } else {
     document.body.classList.add('light-mode');
-    themeToggleCheckbox.checked = false;
   }
 }
 
@@ -104,7 +101,7 @@ function markTile(tile) {
     if (currentPlayer !== null) {
     currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
   }
-  switchTheme(currentPlayer === 'X' ? 'light' : 'dark');
+  switchTheme(currentPlayer === 'X') ? 'light' : 'dark';
     setTimeout(() => {
       checkWin();
     }, 0);
@@ -167,6 +164,4 @@ document.querySelectorAll('.dropdown-item').forEach(item => {
 playAgainButton.addEventListener('click', 
   handlePlayAgainClick);
 
-// Event listener for theme toggle switch//
-document.getElementById('theme-toggle').addEventListener('change', switchTheme);
 
