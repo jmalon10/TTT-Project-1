@@ -73,7 +73,7 @@ body.light-mode .game-board {
 }
 
 body.light-mode .tile {
-  border-color: #ccc;
+  border-color: #ffffff;
 }
 
 /* Dark Mode Styles */
