@@ -152,14 +152,7 @@ function checkWin() { // function to decide if we have a win//
   winModal.show();
   }
 }
-
-// INITIALIZATIONS --------------------------------------------------------------------------
-
-//Apply saved theme on page load and initialize board//
-document.addEventListener('DOMContentLoaded', () => {
-  applySavedTheme();
-  initializeBoard();
-});
+// USER INTERACTIONS -----------------------------------------------------------------------
 
 // Add event listeners to dropdown items//
 document.querySelectorAll('.dropdown-item').forEach(item => {
@@ -168,5 +161,15 @@ document.querySelectorAll('.dropdown-item').forEach(item => {
 // Add event listener to "Play Again" button//
 playAgainButton.addEventListener('click', 
   handlePlayAgainClick);
+
+  // INITIALIZATIONS --------------------------------------------------------------------------
+
+//Apply saved theme on page load and initialize board//
+document.addEventListener('DOMContentLoaded', () => {
+  applySavedTheme();
+  initializeBoard();
+});
+
+
 
 
