@@ -127,5 +127,8 @@ body.dark-mode .tile {
   h1 {
     text-align: center;
   }
+  .tile {
+  font-size: 250%; 
+  }
 
 }
