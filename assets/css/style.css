@@ -4,6 +4,8 @@
     display: flex;
     justify-content: center;
     padding: 2rem;
+}
+
 /* google font class for UI */
 .freckle-face-regular {
     font-family: "Freckle Face", system-ui;
@@ -29,18 +31,12 @@
 }
 
 .tile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 5px solid #bada55;
-    border-radius: 2px;
-    font-size: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 5px solid #000000;
   border-radius: 2px;
-  font-size: 3rem;
+  font-size: 5rem;
 }
 
 /* Toggle Switch CSS */
