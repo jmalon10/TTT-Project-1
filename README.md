@@ -27,9 +27,15 @@ MIT License
 ## Deployed Application
 https://jmalon10.github.io/TTT-Project-1/
 
+## Game Preview
+![Alt text][def]
+
 ## Contact
 For questions or feedback, please reach out to 
 - [Judymae](https://github.com/judymaej)
 - [Jackie](https://github.com/jmalon10)
 - [Jilani](https://github.com/jiju-codes)
 
+
+
+[def]: ./assets/images/two-player-ttt.png
