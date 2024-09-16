@@ -96,6 +96,7 @@ input:checked + .slider:before {
 /* Light Mode Styles */
 body.light-mode {
   background: linear-gradient(to bottom, rgb(250, 145, 145), rgb(159, 159, 231));
+  min-height: 100vh;
   color: rgb(0, 0, 0);
 }
 
@@ -111,6 +112,7 @@ body.light-mode .tile {
 /* Dark Mode Styles */
 body.dark-mode {
   background: linear-gradient(to bottom, rgb(111, 27, 27), rgb(19, 19, 89));
+  min-height: 100vh;
   color: white;
 }
 
