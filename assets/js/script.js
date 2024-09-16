@@ -18,16 +18,25 @@ function switchTheme(theme) {
   if (theme === 'dark') {
     document.body.classList.remove('light-mode');
     document.body.classList.add('dark-mode');
+    localStorage.setItem('theme', 'dark');
   } else {
     document.body.classList.remove('dark-mode');
     document.body.classList.add('light-mode');
+    localStorage.setItem('theme', 'light');
   }
-  localStorage.setItem('theme', theme);
-  currentTheme = theme; // Update the current theme
 }
 
 function applySavedTheme() {
-  switchTheme(currentTheme); // Apply the saved theme on page load
+  const savedTheme = localStorage.getItem('theme') || 'light'; // default to light mode
+  const themeToggleCheckbox = document.getElementById('theme-toggle');
+  
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    themeToggleCheckbox.checked = true;
+  } else {
+    document.body.classList.add('light-mode');
+    themeToggleCheckbox.checked = false;
+  }
 }
 
 
@@ -95,8 +104,7 @@ function markTile(tile) {
     if (currentPlayer !== null) {
     currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
   }
-  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    switchTheme(newTheme);
+  switchTheme(currentPlayer === 'X' ? 'light' : 'dark');
     setTimeout(() => {
       checkWin();
     }, 0);
