@@ -18,22 +18,16 @@ function switchTheme(theme) {
   if (theme === 'dark') {
     document.body.classList.remove('light-mode');
     document.body.classList.add('dark-mode');
-    localStorage.setItem('theme', 'dark');
   } else {
     document.body.classList.remove('dark-mode');
     document.body.classList.add('light-mode');
-    localStorage.setItem('theme', 'light');
   }
+  localStorage.setItem('theme', theme);
+  currentTheme = theme; // Update the current theme
 }
 
 function applySavedTheme() {
-  const savedTheme = localStorage.getItem('theme') || 'light'; // default to light mode
-  
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-  } else {
-    document.body.classList.add('light-mode');
-  }
+  switchTheme(currentTheme); // Apply the saved theme on page load
 }
 
 
@@ -101,7 +95,8 @@ function markTile(tile) {
     if (currentPlayer !== null) {
     currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
   }
-  switchTheme(currentPlayer === 'X') ? 'light' : 'dark';
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    switchTheme(newTheme);
     setTimeout(() => {
       checkWin();
     }, 0);
