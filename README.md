@@ -28,7 +28,7 @@ MIT License
 https://jmalon10.github.io/TTT-Project-1/
 
 ## Game Preview
-![Alt text][def]
+![Two Player Tic-Tac-Toe Interface Image][def]
 
 ## Contact
 For questions or feedback, please reach out to 
