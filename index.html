@@ -17,7 +17,7 @@
   </label>
   <header>
     <h1 class="display-1 text-center" >Two Player Tic-Tac-Toe</h1>
-  </header>
+    </header>
     <!-- dropdown selector for choice between Player X or Player O ) -->
     <div class="dropdown">
         <button id="player-selector" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,7 +28,7 @@
           <li><a class="dropdown-item" href="#" id="player-o" >Player 0</a></li>
         </ul>
       </div>
-
+      
       <div class="game-board">
         <div class="tile" id="top-left" onclick="markTile(this)" data-row="0" data-column="0"></div>
         <div class="tile" id="top-middle" onclick="markTile(this)" data-row="0" data-column="1"></div>
@@ -40,9 +40,8 @@
         <div class="tile" id="bottom-center" onclick="markTile(this)" data-row="2" data-column="1"></div>
         <div class="tile" id="bottom-right" onclick="markTile(this)" data-row="2" data-column="2"></div>
       </div>
-
-      <button type="button" class="btn btn-success position-absolute top-100 start-50 translate-middle" id='play-again-btn'>Play Again!</button>
-  
+      <div class="play-again"><button type="button" class="btn btn-secondary" id='play-again-btn'>Play Again!</button></div>
+        
             <!-- Player Selection Modal -->
 <div class="modal fade" id="playerSelectionModal" tabindex="-1" aria-labelledby="playerSelectionModalLabel" aria-hidden="true">
   <div class="modal-dialog">
