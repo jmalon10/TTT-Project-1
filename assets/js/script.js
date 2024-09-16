@@ -14,8 +14,8 @@ let twoDarray = JSON.parse(localStorage.getItem('storedData')) || defaultTwoDarr
 
 //------------------------------FUNCTIONS -------------------------------------------------------------------------------
 // Light/Dark Theme Functions --------------------------------------------------------------
-function switchTheme(event) {
-  if (event.target.checked) {
+function switchTheme(theme) {
+  if (theme === 'dark') {
     document.body.classList.remove('light-mode');
     document.body.classList.add('dark-mode');
     localStorage.setItem('theme', 'dark');
@@ -104,8 +104,7 @@ function markTile(tile) {
     if (currentPlayer !== null) {
     currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
   }
-    // Switch player//
-  
+  switchTheme(currentPlayer === 'X' ? 'light' : 'dark');
     setTimeout(() => {
       checkWin();
     }, 0);
@@ -168,6 +167,4 @@ document.querySelectorAll('.dropdown-item').forEach(item => {
 playAgainButton.addEventListener('click', 
   handlePlayAgainClick);
 
-// Event listener for theme toggle switch//
-document.getElementById('theme-toggle').addEventListener('change', switchTheme);
 

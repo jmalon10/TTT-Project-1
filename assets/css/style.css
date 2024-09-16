@@ -4,6 +4,12 @@
     display: flex;
     justify-content: center;
     padding: 2rem;
+}
+.play-again {
+  display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
 /* google font class for UI */
 .freckle-face-regular {
     font-family: "Freckle Face", system-ui;
@@ -113,4 +119,8 @@ body.dark-mode .game-board {
 
 body.dark-mode .tile {
   border-color: #000;
+}
+
+#winModal {
+  color: #000;
 }
