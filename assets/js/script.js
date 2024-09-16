@@ -150,7 +150,7 @@ function checkWin() { // function to decide if we have a win//
   winModal.show();
   }
 }
-
+// USER INTERACTIONS -----------------------------------------------------------------------
 // INITIALIZATIONS --------------------------------------------------------------------------
 
 //Apply saved theme on page load and initialize board//
