@@ -105,7 +105,7 @@ function markTile(tile) {
     currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
   }
   const displayCurrentPlayer = document.getElementById('currentPlayer')
-  displayCurrentPlayer.textContent = currentPlayer
+  displayCurrentPlayer.textContent = `Current Player: ${currentPlayer}`
   switchTheme(currentPlayer === 'X' ? 'light' : 'dark');
     setTimeout(() => {
       checkWin();
