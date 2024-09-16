@@ -11,6 +11,13 @@
     justify-content: center;
     padding: 2rem;
 }
+
+#currentPlayer {
+  display: flex;
+    justify-content: center;
+  
+}
+
 /* google font class for UI */
 .freckle-face-regular {
     font-family: "Freckle Face", system-ui;
@@ -119,13 +126,16 @@ body.dark-mode .tile {
 #winModal {
   color: #000;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .game-board {
     width: 300px;
     height: 300px;
   }
   h1 {
     text-align: center;
+  }
+  .tile {
+  font-size: 250%; 
   }
 
 }
