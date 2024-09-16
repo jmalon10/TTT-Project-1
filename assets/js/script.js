@@ -60,7 +60,7 @@ function setPlayer(event) {
 function hideDropdown() {
   const dropdown = document.querySelector('.dropdown');
   if (dropdown) {
-    dropdown.style.display = 'none';
+    dropdown.style.visibility = 'hidden'; 
   }
 }
 
