@@ -6,6 +6,7 @@
     padding: 2rem;
     padding-top: 1rem;
 }
+
 .play-again {
   display: flex;
     justify-content: center;
@@ -38,19 +39,54 @@
   height: 500px;
   margin: 0 auto;
   background: linear-gradient(to bottom, rgb(160, 50, 50), rgb(32, 32, 144));
-  border: 5px solid #000000;
-  border-radius: 10px;
 }
 
 .tile {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 5px solid #000000;
-  border-radius: 2px;
   font-size: 5rem;
 }
 
+#top-left {
+  border-right: 5px solid #000;
+  border-bottom: 5px solid #000;
+}
+#top-middle {
+  border-right: 5px solid #000;
+  border-bottom: 5px solid #000;
+  border-left: 5px solid #000;
+}
+#top-right {
+  border-left: 5px solid #000;
+  border-bottom: 5px solid #000;
+}
+#center-left {
+  border-top: 5px solid #000;
+  border-bottom: 5px solid #000;
+  border-right: 5px solid #000;
+}
+#center-center {
+  border: 5px solid #000;
+}
+#center-right {
+  border-left: 5px solid #000;
+  border-bottom: 5px solid #000;
+  border-top: 5px solid #000;
+}
+#bottom-left {
+  border-top: 5px solid #000;
+  border-right: 5px solid #000;
+}
+#bottom-center {
+  border-left: 5px solid #000;
+  border-right: 5px solid #000;
+  border-top: 5px solid #000;
+}
+#bottom-right {
+  border-left: 5px solid #000;
+  border-top: 5px solid #000;
+}
 /* Toggle Switch CSS */
 .theme-switch {
   position: fixed;
@@ -102,10 +138,17 @@ body.light-mode {
 
 body.light-mode .game-board {
   background: linear-gradient(to bottom, #f68b8b, #95a3fe); /* Light mode board color */
-  border: 5px solid #fff;
-}
+  }
 
-body.light-mode .tile {
+body.light-mode #top-left,
+body.light-mode #top-middle,
+body.light-mode #top-right,
+body.light-mode #center-left,
+body.light-mode #center-center, 
+body.light-mode #center-right,
+body.light-mode #bottom-left,
+body.light-mode #bottom-center,
+body.light-mode #bottom-right {
   border-color: #ffffff;
 }
 
@@ -118,10 +161,17 @@ body.dark-mode {
 
 body.dark-mode .game-board {
   background: linear-gradient(to bottom, rgb(160, 50, 50), rgb(32, 32, 144)); /* Dark mode board color */
-  border: 5px solid #000000;
 }
 
-body.dark-mode .tile {
+body.dark-mode #top-left,
+#top-middle,
+#top-right,
+#center-left,
+#center-center, 
+#center-right,
+#bottom-left,
+#bottom-center,
+#bottom-right {
   border-color: #000;
 }
 
@@ -140,4 +190,7 @@ body.dark-mode .tile {
   font-size: 250%; 
   }
 
+}
+#dropdown-menu {
+  inset: 0px auto auto -15px !important;
 }
